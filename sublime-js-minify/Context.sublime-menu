@@ -1,0 +1,17 @@
+[ 
+    {
+        "caption": "Adam Presley",
+        "id": "adampresley",
+        "children": [ 
+            { 
+                "command": "minifyjs", 
+                "args": { 
+                    "command": "\"C:\\yuicompressor-2.4.7\\build\\yuicompressor-2.4.7.jar\"", 
+                    "args": "--type=js --line-break=3000 --preserve-semi", 
+                    "suffixes": [ "-min", ".min" ] 
+                },
+                "caption": "Minify JavaScript"
+            }
+        ]
+    }
+]
