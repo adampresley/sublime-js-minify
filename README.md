@@ -11,7 +11,7 @@ it will look for *youFile.min.js* or *yourFile-min.js*.
 ## Installation
 To "install" this plugin find your User Packages directory for Sublime. In Windows 7
 this would be something to the effect of **C:\Users\me\AppData\Roaming\Sublime Text 2\Packages\User**.
-For most *nix distributions that would be **/home/me/.conf/Sublime Text 2/Packages/User**.
+For most \*nix distributions that would be **/home/me/.conf/Sublime Text 2/Packages/User**.
 
 Download the project and place the *sublime-js-minify* directory into the above packages directory. 
 This will load up the plugin. It also will create menus, context menus, and a key binding. 
