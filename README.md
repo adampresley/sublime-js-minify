@@ -10,27 +10,11 @@ it will look for *youFile.min.js* or *yourFile-min.js*.
 
 ## Installation
 To "install" this plugin find your User Packages directory for Sublime. In Windows 7
-this would be something to the effect of **C:\Users\me\AppData\Roaming\Sublime Text 2\Packages\User**.
-For most \*nix distributions that would be **/home/me/.conf/Sublime Text 2/Packages/User**.
+this would be something to the effect of **C:\Users\me\AppData\Roaming\Sublime Text 2\Packages**.
+For most \*nix distributions that would be **/home/me/.conf/sublime-text-2/Packages**.
 
 Download the project and place the *sublime-js-minify* directory into the above packages directory. 
 This will load up the plugin. It also will create menus, context menus, and a key binding. 
-
-This plugin, however, depends on the Yahoo! YUI Compressor, which is provided along with this
-repository. Take the *yuicompressor-2.4.7* directory and place it somewhere. Anywhere you
-can get to it is fine. Once this is done you will need to alter the following files for
-the minification tool to work:
-
-* Main.sublime-menu
-* Default (Windows).sublime-keymap
-* Default (OSX).sublime-keymap
-* Default (Linux).sublime-keymap
-* Context.sublime-menu
-
-Note that you don't have to modify every key map file, just the one that applies to the OS
-you are using. In each of those files you will see a key labelled **"command"** that has
-a path to the **yuicompressor-2.4.7.jar** file. Change the path to this to match where you
-placed the *yuicompressor-2.4.7* directory.
 
 Once complete you should be able to open a JavaScript file and execute it one of the 
 following ways:
