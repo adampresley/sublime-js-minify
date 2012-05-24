@@ -1,5 +1,11 @@
 #
 # History:
+#
+# 		5/23/2012: 
+# 			- Plugin now looks in the current directory for yuicompressor.jar
+# 			- All options are stored in central settings.json file instead of each
+# 			  keymap and menu file.
+#
 # 		2/13/2012:
 # 			- Fixed issue with running on a file with a UNC path in Windows. Now uses the
 # 			  user's home directory as the current working directory.
