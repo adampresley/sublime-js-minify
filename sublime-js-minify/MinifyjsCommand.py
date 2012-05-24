@@ -6,13 +6,13 @@
 #
 import sublime, sublime_plugin
 import re, os, subprocess
-import time
+import time, json
 
 from subprocess import Popen
 
 targetView = None
 targetCode = None
-
+PLUGIN_DIRECTORY = os.getcwd()
 
 def replaceWithNewCode(view):
 	global targetCode
@@ -38,13 +38,22 @@ class MinifyjsCommand(sublime_plugin.TextCommand):
 	__window = None
 	__view = None
 
-	def run(self, edit, command, args, suffixes):
+	def run(self, edit):
+		#
+		# Read our settings file
+		#
+		jsonData = open(os.path.normpath("%s/settings.json" % (PLUGIN_DIRECTORY)))
+		settings = json.load(jsonData)
+		jsonData.close()
+
+
 		#
 		# Assemble the command to the YUI compressor
 		#
 		currentBuffer = self.__getCurrentBufferInfo()
 		filename = currentBuffer["fileName"]
-		processCommand = self.__getCommand(command, args, filename)
+		processCommand = self.__getCommand('"' + os.path.normpath("%s/yuicompressor-2.4.7.jar" % (PLUGIN_DIRECTORY)) + '"', settings["args"], filename)
+
 
 		self.__view = self.view
 		self.__window = self.view.window()
@@ -67,7 +76,7 @@ class MinifyjsCommand(sublime_plugin.TextCommand):
 		#
 		# Display the results in a new tab, or alter existing minified file.
 		#
-		if not self.__findExistingMinifiedMatches(filename, suffixes, newCode):
+		if not self.__findExistingMinifiedMatches(filename, settings["suffixes"], newCode):
 			self.__displayResults(newCode)
 
 

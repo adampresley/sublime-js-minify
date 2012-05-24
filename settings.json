@@ -1,0 +1,4 @@
+{ 
+	"args": "--type=js --line-break=3000 --preserve-semi", 
+	"suffixes": [ "-min", ".min" ] 
+} 
