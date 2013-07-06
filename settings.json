@@ -1,4 +1,7 @@
-{ 
-	"args": "--type=js --line-break=3000 --preserve-semi", 
-	"suffixes": [ "-min", ".min" ] 
-} 
+{
+	"charset_priority": [ "gbk", "big5", "utf-8"],
+	"args": "--line-break=3000 --preserve-semi",
+	"suffixes": [ "-min", ".min" ],
+	"default_suffix": "-min",
+	"open_tab_when_saved": false
+}
